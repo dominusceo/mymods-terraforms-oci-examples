@@ -1,0 +1,17 @@
+Host d52-bastion
+          Hostname 158.101.17.225
+          User opc
+          IdentityFile ~/.ssh/id_rsa
+          StrictHostKeyChecking no
+Host d52-ws1
+          Hostname 12.0.1.2
+          User opc
+          IdentityFile ~/.ssh/okit.key
+          StrictHostKeyChecking no
+          proxycommand /usr/bin/ssh -F sshcfg -W %h:%p d52-bastion
+Host d52-ws2
+          Hostname 12.0.1.3
+          User opc
+          IdentityFile ~/.ssh/okit.key
+          StrictHostKeyChecking no
+          proxycommand /usr/bin/ssh -F sshcfg -W %h:%p d52-bastion
